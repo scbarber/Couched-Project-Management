@@ -1,0 +1,21 @@
+<h3>Active Projects</h3>
+<table>
+    <thead>
+        <tr>
+            <td>Client</td>
+            <td>Project</td>
+            <td>Due</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#projects}}
+        <tr id="{{_id}}" class="{{css_class}}">
+            <td>{{client}}</td>
+            <td>{{title}}</td>
+            <td>{{due_date}}</td>
+            <td>View | Edit</td>
+        </tr>
+        {{/projects}}
+    </tbody>
+</table>

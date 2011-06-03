@@ -1,0 +1,3 @@
+{
+    "a#create-a-project": {"click": "function(){$('#vagrant').show();return(false);}"}
+}
