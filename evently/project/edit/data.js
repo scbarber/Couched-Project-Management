@@ -6,19 +6,21 @@ function(e, project_id) {
             {option: 'Active'},
             {option: 'On Hold'},
             {option: 'Complete'}
-        ]
+        ],
+        submit: 'Add Project'
     };
 
     if (project_id) {
         $$(this).app.db.openDoc(project_id, {
            success: function(doc) {
                doc.options = data.options;
-               for (i in doc.options) {
-                   if (doc.options[i].option == doc.status) {
-                       doc.options[i].selected = true;
+               data = doc;
+               for (i in data.options) {
+                   if (data.options[i].option == doc.status) {
+                       data.options[i].selected = true;
                    }
                }
-               data = doc;
+               data.submit = 'Save Project';
            }
         }, {async: false});
     }
