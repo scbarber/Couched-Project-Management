@@ -1,5 +1,6 @@
 function(e, project_id) {
     var data = {
+        action: 'Add',
         mockups: 'http://',
         options: [
             {option: 'Prospect'},
@@ -20,6 +21,7 @@ function(e, project_id) {
                        data.options[i].selected = true;
                    }
                }
+               data.action = 'Edit';
                data.submit = 'Save Project';
            }
         }, {async: false});
