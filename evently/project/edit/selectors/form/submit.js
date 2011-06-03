@@ -17,7 +17,7 @@ function() {
                 });
             }
             form[0].reset();
-            form.parent().hide();
+            form.parent().html('');
         }
     });
     return false;

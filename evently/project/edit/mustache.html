@@ -1,0 +1,19 @@
+<form>
+    <label for="title">Project Title:</label> <input type="text" id="title" name="title" value="{{title}}">
+    <label for="client">Client:</label> <input type="text" id="client" name="client" value="{{client}}">
+    <label for="due_date">Due Date: </label> <input type="text" id="due_date" name="due_date" value="{{due_date}}" class="datepicker">
+    <script>$(function(){$(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });});</script>
+    <label for="status">Status: </label>
+    <select id="status" name="status">
+        {{#options}}
+        <option{{#selected}} selected{{/selected}}>{{option}}</option>
+        {{/options}}
+    </select>
+    <label for="mockups">Mockup "Beta" URL: </label> <input type="text" id="mockups" name="mockups" value="{{mockups}}">
+    <label for="_attachments">Proposal:</label> <input type="file" name="_attachments" id="_attachments">
+    <input type="hidden" name="_rev" value="{{_rev}}">
+    {{#_id}}
+    <input type="hidden" name="_id" value="{{_id}}">
+    {{/_id}}
+    <input type="submit" value="Add Project">
+</form>

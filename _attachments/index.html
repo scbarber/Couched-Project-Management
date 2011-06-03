@@ -24,7 +24,10 @@
       $("#account").evently("account", app);
       $("nav").evently("nav", app);
       $("#main").evently("active-projects", app);
-      $("#vagrant").evently("new-project", app);
+      $("#vagrant").evently("project", app);
+      
+      $.evently.connect("#main", "#vagrant", ["edit"]);
+      $.evently.connect("nav", "#vagrant", ["edit"]);
     });
   </script>
 </html>

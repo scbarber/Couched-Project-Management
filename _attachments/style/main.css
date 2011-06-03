@@ -83,6 +83,6 @@ section form input[type="text"] {
     width: 50%;
 }
 
-section#vagrant { display: none; }
+/*section#vagrant { display: none; }*/
 
 tr.overdue { background: red; }
