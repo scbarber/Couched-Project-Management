@@ -4,6 +4,16 @@ function() {
     var doc = $(form).serializeObject();
     doc.created_at = new Date();
     doc.type = "project";
+
+    // Set some meta dates:
+    if (doc.status == "Active" && !doc.started_on) {
+        doc.started_on = new Date();
+    }
+
+    if (doc.status == "Completed" && !doc.completed_on) {
+        doc.completed_on = new Date();
+    }
+
     if (!doc._rev) {
         delete doc._rev;
     }
