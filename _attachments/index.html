@@ -13,7 +13,7 @@
     </header>
 
     <section id="vagrant"></section>
-    <section id="main"></section>
+    <section id="projects"></section>
   </body>
   <script src="js/date.js"></script>
   <script src="vendor/couchapp/loader.js"></script>
@@ -23,10 +23,10 @@
     $.couch.app(function(app) {
       $("#account").evently("account", app);
       $("nav").evently("nav", app);
-      $("#main").evently("active-projects", app);
+      $("#projects").evently("projects", app);
       $("#vagrant").evently("project", app);
       
-      $.evently.connect("#main", "#vagrant", ["edit"]);
+      $.evently.connect("#projects", "#vagrant", ["edit"]);
       $.evently.connect("nav", "#vagrant", ["edit"]);
     });
   </script>
