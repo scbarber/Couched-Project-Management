@@ -4,7 +4,6 @@
         <tr>
             <td>Client</td>
             <td>Project</td>
-            <td>Due</td>
             <td>Actions</td>
         </tr>
     </thead>
@@ -13,8 +12,7 @@
         <tr id="{{_id}}">
             <td>{{client}}</td>
             <td>{{title}}</td>
-            <td>{{due_date}}</td>
-            <td>View | <a class="edit" href="#">Edit</a></td>
+            <td><a class="view" href="#/project/view/{{_id}}">View</a> | <a class="edit" href="#">Edit</a></td>
         </tr>
         {{/projects}}
     </tbody>
