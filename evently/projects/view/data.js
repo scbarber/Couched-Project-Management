@@ -2,11 +2,15 @@ function(data) {
   // $.log(data)
   var project;
   var tasks = [];
-  var date;
-  
+  var db = $$(this).app.db;
+
   data.rows.map(function(r){
       if (r.value.type == 'project') {
           project = r.value;
+          if (project._attachments) {
+              for (i in project._attachments)
+                  project.proposal = ['', db.name, project._id, i].join('/');
+          }
       } else if(r.value.type == 'task') {
           tasks.push(r.value);
       }
