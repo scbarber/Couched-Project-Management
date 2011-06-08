@@ -3,10 +3,10 @@
 
 <table class="dates">
     <tbody>
-        <tr><td>Created</td><td>{{#date}}{{created_at}}{{/date}}</td></tr>
-        {{#started_on}}<tr><td>Started</td><td>{{#date}}{{started_on}}{{/date}}</td></tr>{{/started_on}}
-        <tr><td>Due</td><td>{{#date}}{{due_date}}{{/date}}</td></tr>
-        {{#completed_on}}<tr><td>Completed</td><td>{{#date}}{{completed_on}}{{/date}}</td></tr>{{/completed_on}}
+        <tr><td>Created</td><td>{{#format_date}}{{created_at}}{{/format_date}}</td></tr>
+        {{#started_on}}<tr><td>Started</td><td>{{#format_date}}{{started_on}}{{/format_date}}</td></tr>{{/started_on}}
+        <tr><td>Due</td><td>{{#format_date}}{{due_date}}{{/format_date}}</td></tr>
+        {{#completed_on}}<tr><td>Completed</td><td>{{#format_date}}{{completed_on}}{{/format_date}}</td></tr>{{/completed_on}}
     </tbody>
 </table>
 

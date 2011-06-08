@@ -17,7 +17,7 @@ function(data) {
   });
   
   return {
-    date : function() {
+    format_date : function() {
         return function(text, render) {
             return Date.parseExact(render(text).replace(/\.\d+Z$/, 'Z'), ["yyyy-MM-ddTHH:mm:ssZ", "yyyy-MM-dd"]).toString("MMM d, yyyy");
         }
