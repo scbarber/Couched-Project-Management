@@ -1,10 +1,10 @@
 {{#project}}
 <h2>{{title}}</h2>
 <h3><span class="label">client: </span>{{client}}</h3>
-<table>
-    <tr><td>Created</td><td>{{created_at}}</td></tr>
-    {{#started_on}}<tr><td>Started</td><td>{{started_on}}</td></tr>{{/started_on}}
-    <tr><td>Due</td><td>{{due_date}}</td></tr>
-    {{#completed_on}}<tr><td>Completed</td><td>{{completed_on}}</td></tr>{{/completed_on}}
+<table class="dates">
+    <tr><td>Created</td><td>{{#date}}{{created_at}}{{/date}}</td></tr>
+    {{#started_on}}<tr><td>Started</td><td>{{#date}}{{started_on}}{{/date}}</td></tr>{{/started_on}}
+    <tr><td>Due</td><td>{{#date}}{{due_date}}{{/date}}</td></tr>
+    {{#completed_on}}<tr><td>Completed</td><td>{{#date}}{{completed_on}}{{/date}}</td></tr>{{/completed_on}}
 </table>
 {{/project}}
