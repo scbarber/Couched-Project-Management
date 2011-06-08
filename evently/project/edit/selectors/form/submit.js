@@ -1,11 +1,26 @@
 function() {
     var form = $(this);
     var db = $$(this).app.db;
-    var doc = $(form).serializeObject();
-    doc.created_at = new Date();
-    doc.type = "project";
+    var doc = $$('html').project;
+    var fdoc = $(form).serializeObject();
+    
+    if (!doc) {
+        doc = fdoc;
+    } else {
+        for (var item in fdoc) {
+            if (item != '_attachments') {
+                doc[item] = fdoc[item];
+            }
+        }
+    }
 
+    doc.type = "project";
+    
     // Set some meta dates:
+    if (!doc.created_at) {
+        doc.created_at = new Date();
+    }
+
     if (doc.status == "Active" && !doc.started_on) {
         doc.started_on = new Date();
     }
@@ -14,9 +29,6 @@ function() {
         doc.completed_on = new Date();
     }
 
-    if (!doc._rev) {
-        delete doc._rev;
-    }
     db.saveDoc(doc, {
         success : function() {
             $("[name='_rev']", form).val(doc._rev);

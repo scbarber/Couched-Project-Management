@@ -1,7 +1,7 @@
 function(e, project_id) {
     var data = {
         action: 'Add',
-        mockups: 'http://',
+        project: {},
         options: [
             {option: 'Prospect'},
             {option: 'Active'},
@@ -14,8 +14,7 @@ function(e, project_id) {
     if (project_id) {
         $$(this).app.db.openDoc(project_id, {
            success: function(doc) {
-               doc.options = data.options;
-               data = doc;
+               data.project = doc;
                for (i in data.options) {
                    if (data.options[i].option == doc.status) {
                        data.options[i].selected = true;
@@ -26,5 +25,9 @@ function(e, project_id) {
            }
         }, {async: false});
     }
+    
+    // Store the project in the DOM in order to save data not in the form
+    if (data.project._id) $$('html').project = data.project;
+    
     return data;
 }
