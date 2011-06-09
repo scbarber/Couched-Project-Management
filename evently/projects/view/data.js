@@ -1,6 +1,6 @@
 function(data) {
   // $.log(data)
-  var project;
+  var project = {};
   var tasks = [];
   var db = $$(this).app.db;
 
@@ -15,6 +15,9 @@ function(data) {
           tasks.push(r.value);
       }
   });
+
+  // Save the project in the DOM
+  $$(this).project = project;
   
   return {
     format_date : function() {
