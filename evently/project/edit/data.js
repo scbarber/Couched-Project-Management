@@ -2,14 +2,14 @@ function(e, project_id) {
     var data = {
         action: 'Add',
         project: {},
-        options: [
-            {option: 'Prospect'},
-            {option: 'Active'},
-            {option: 'On Hold'},
-            {option: 'Complete'}
-        ],
+        options: [],
         submit: 'Add Project'
     };
+
+    var options = $$(this).app.ddoc.statuses.options;
+    for (var o in options) {
+        data.options[o] = { "option": options[o].option };
+    }
 
     if (project_id) {
         $$(this).app.db.openDoc(project_id, {

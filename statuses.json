@@ -1,0 +1,8 @@
+{
+    "options": [
+        {"option": "Prospect"},
+        {"option": "Active"},
+        {"option": "On Hold"},
+        {"option": "Complete"}
+    ]
+}
