@@ -17,7 +17,7 @@ function(data) {
   });
 
   // Save the project in the DOM
-  $$(this).project = project;
+  $$('html').project = project;
   
   return {
     format_date : function() {
