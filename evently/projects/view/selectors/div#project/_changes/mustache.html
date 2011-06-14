@@ -25,14 +25,22 @@
     <h3>Tasks</h3>
     <div id="add-new-task">
         <form>
-            <label for="task-title">Title: </label> <input type="text" id="task-title" name="title">
-            <label for="task-description">Description: </label> <input type="text" id="task-description" name="description">
-            <select name="status">
-                <option value="active">Active</option>
-                <option value="pending">Pending</option>
-                <option value="complete">Complete</option>
-            </select>
-            <input type="submit" value="Add Task">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="title"><label for="task-title">Title: </label> <input type="text" id="task-title" name="title"></td>
+                        <td class="desc"><label for="task-description">Description: </label> <input type="text" id="task-description" name="description"></td>
+                        <td class="status">
+                            <select name="status">
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="complete">Complete</option>
+                        </select>
+                        </td>
+                        <td class="actions"><input type="submit" value="Add Task"></td>
+                    </tr>
+                </tbody>
+            </table>
         </form>
     </div>
     <a class="add-task" href="#/project/view/{{_id}}">+ Task</a>
@@ -48,13 +56,6 @@
             </tr>
         </thead>
         <tbody>
-        {{#pending}}
-            <tr class="pending">
-                <td class="title">{{title}}</td>
-                <td class="desc">{{description}}</td>
-                <td class="status">Pending</td>
-                <td class="actions">Edit | Remove</td>
-        {{/pending}}
         {{#active}}
             <tr class="active">
                 <td class="title">{{title}}</td>
@@ -62,6 +63,13 @@
                 <td class="status">Active</td>
                 <td class="actions">Edit | Remove</td>
         {{/active}}
+        {{#pending}}
+            <tr class="pending">
+                <td class="title">{{title}}</td>
+                <td class="desc">{{description}}</td>
+                <td class="status">Pending</td>
+                <td class="actions">Edit | Remove</td>
+        {{/pending}}
         {{#complete}}
             <tr class="complete">
                 <td class="title">{{title}}</td>
