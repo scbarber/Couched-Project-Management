@@ -64,3 +64,10 @@ tr.overdue { background: red; }
 #projects div#project div#tasks table td.desc { width: 50%; }
 #projects div#project div#tasks table td.status { width: 10%; }
 #projects div#project div#tasks table td.actions { width: 15%; }
+
+#projects div#project div#tasks table td.status span.date {
+    font-size: 0.7em;
+    display: block;
+    font-style: oblique;
+    color: #888;
+}

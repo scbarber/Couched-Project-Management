@@ -12,10 +12,20 @@ function(e, r) {
     
     if (status == "active") {
         doc.tasks.active.push(task);
+
+        // Resetting dates
+        if (task.completed_on) delete task.completed_on;
+        if (task.set_pending_on) delete task.set_pending_on;
     } else if (status == "pending") {
         doc.tasks.pending.push(task);
+        task.set_pending_on = new Date();
+
+        if (task.completed_on) delete task.completed_on;
     } else if (status == "complete") {
         doc.tasks.complete.push(task);
+        task.completed_on = new Date();
+
+        if (task.set_pending_on) delete task.set_pending_on;
     }
     
     db.saveDoc(doc, {
