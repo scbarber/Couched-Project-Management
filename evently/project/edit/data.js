@@ -6,7 +6,7 @@ function(e, project_id) {
         submit: 'Add Project'
     };
 
-    var options = $$(this).app.ddoc.statuses.options;
+    var options = $$(this).app.ddoc.statuses.project;
     for (var o in options) {
         data.options[o] = { "option": options[o].option };
     }

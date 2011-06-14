@@ -37,10 +37,10 @@
                         <td class="desc"><label for="task-description">Description: </label> <input type="text" id="task-description" name="description"></td>
                         <td class="status">
                             <select name="status">
-                            <option value="active">Active</option>
-                            <option value="pending">Pending</option>
-                            <option value="complete">Complete</option>
-                        </select>
+                                {{#task_statuses}}
+                                <option value="{{value}}">{{option}}</option>
+                                {{/task_statuses}}
+                            </select>
                         </td>
                         <td class="actions"><input type="submit" value="Add Task"></td>
                     </tr>
@@ -68,7 +68,7 @@
             <tr class="active">
                 <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
-                <td class="status">Active</td>
+                <td class="status"><span>Active</span></td>
                 <td class="actions">Edit | Remove</td>
             </tr>
         {{/active}}
@@ -82,7 +82,7 @@
             <tr class="pending">
                 <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
-                <td class="status">Pending<span class="date">as of {{#format_date}}{{set_pending_on}}{{/format_date}}</span></td>
+                <td class="status"><span>Pending</span><span class="date">as of {{#format_date}}{{set_pending_on}}{{/format_date}}</span></td>
                 <td class="actions">Edit | Remove</td>
             </tr>
         {{/pending}}
@@ -96,7 +96,7 @@
             <tr class="complete">
                 <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
-                <td class="status">Complete<span class="date">as of {{#format_date}}{{completed_on}}{{/format_date}}</span></td>
+                <td class="status"><span>Complete</span><span class="date">as of {{#format_date}}{{completed_on}}{{/format_date}}</span></td>
                 <td class="actions">Edit | Remove</td>
             </tr>
             {{/complete}}

@@ -1,8 +1,13 @@
 {
-    "options": [
+    "project": [
         {"option": "Prospect"},
         {"option": "Active"},
         {"option": "On Hold"},
         {"option": "Complete"}
+    ],
+    "task": [
+        {"option": "Active", "value": "active"},
+        {"option": "Pending", "value": "pending"},
+        {"option": "Complete", "value": "complete"}
     ]
 }

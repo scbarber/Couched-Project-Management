@@ -19,7 +19,9 @@ function(data) {
   return {
     format_date : function() {
         return function(text, render) {
-            return Date.parseExact(render(text).replace(/\.\d+Z$/, 'Z'), ["yyyy-MM-ddTHH:mm:ssZ", "yyyy-MM-dd"]).toString("MMM d, yyyy");
+            if (render(text))
+                return Date.parseExact(render(text).replace(/\.\d+Z$/, 'Z'), ["yyyy-MM-ddTHH:mm:ssZ", "yyyy-MM-dd"]).toString("MMM d, yyyy");
+            else return "";
         }
     },
     has_active_tasks : function() {
@@ -32,5 +34,6 @@ function(data) {
         return this.complete.length !== 0;
     },
     project : project,
+    task_statuses : $$(this).app.ddoc.statuses.task
   };
 };
