@@ -11,10 +11,35 @@ section form input[type="text"] {
 
 tr.overdue { background: red; }
 
+#projects table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* General Projects Table theming */
+
+#projects table thead tr td { background: #333; color: white; padding: 1em; }
+#projects table tbody tr td { padding: 0.5em; border-top: 0.3em solid white; }
+
+/* Specific Overrides */
+
+/* Projects Lists */
+
+#projects table tbody tr td.progress {width: 10% }
+
+/* Single Project View */
+
+#projects table.dates tbody tr td,
+#projects table.meta tbody tr td {
+    padding: 0;
+    border-top: 0;
+}
+
 #projects table.dates {
     float: right;
     font-size: 0.7em;
     border-collapse: collapse;
+    width: auto;
 }
 
 #projects table.meta {
@@ -28,16 +53,16 @@ tr.overdue { background: red; }
 #projects table.dates tr { border: 1px solid #888; }
 
 #projects table.dates tr td:first-child,
-#projects table.meta tr td.label {
+#projects table.meta tbody tr td.label {
     background: #bbb;
-    padding-right: 7px;
+    padding-right: 7px !important;
     text-transform: uppercase;
 }
 
-#projects table.meta tr td { padding-right: 5em; }
+#projects table.meta tbody tr td { padding-right: 5em !important; }
 
-#projects table.meta tr td.label {
-    padding-left: 2em;
+#projects table.meta tbody tr td.label {
+    padding-left: 2em !important;
     font-size: 0.5em;
     font-weight: normal;
     text-transform: lowercase;
@@ -45,16 +70,9 @@ tr.overdue { background: red; }
     text-align: right;
 }
 
+/* Tasks */
+
 #projects div#project div#tasks div#add-new-task { display: none; }
-
-#projects div#project div#tasks table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#projects div#project div#tasks table thead tr td { background: #333; color: white; padding: 1em; }
-
-#projects div#project div#tasks table tbody tr td { padding: 0.5em; border-top: 0.3em solid white; }
 
 #projects div#project div#tasks table tr.active { background: #ddd; }
 #projects div#project div#tasks table tr.pending { background: #F2E1D9; }
@@ -71,3 +89,5 @@ tr.overdue { background: red; }
     font-style: oblique;
     color: #888;
 }
+
+.progressbar { height: 7px !important; }

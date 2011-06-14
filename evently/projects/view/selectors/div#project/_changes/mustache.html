@@ -21,6 +21,14 @@
     </tbody>
 </table>
 
+<h3>Progress</h3>
+{{#progress}}
+<div id="progressbar" class="progressbar"></div>
+<script>
+    $("#progressbar").progressbar({ value: {{percent}} });
+</script>
+{{/progress}}
+
 <div id="tasks">
     <h3>Tasks</h3>
     <div id="add-new-task">

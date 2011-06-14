@@ -23,6 +23,10 @@ function() {
             pending: [],
             complete: []
         }
+        doc.progress = {
+            string : "0 of 0",
+            percent : "0"
+        }
     }
     
     // Set some meta dates:

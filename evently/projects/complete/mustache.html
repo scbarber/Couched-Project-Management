@@ -1,18 +1,18 @@
 <h3>Complete Projects</h3>
-<table>
+<table class="projects">
     <thead>
         <tr>
-            <td>Client</td>
-            <td>Project</td>
-            <td>Actions</td>
+            <td class="client">Client</td>
+            <td class="project">Project</td>
+            <td class="actions">Actions</td>
         </tr>
     </thead>
     <tbody>
         {{#projects}}
         <tr id="{{_id}}">
-            <td>{{client}}</td>
-            <td>{{title}}</td>
-            <td><a class="view" href="#/project/view/{{_id}}">View</a> | <a class="edit" href="#">Edit</a></td>
+            <td class="client">{{client}}</td>
+            <td class="project">{{title}}</td>
+            <td class="actions"><a class="view" href="#/project/view/{{_id}}">View</a> | <a class="edit" href="#">Edit</a></td>
         </tr>
         {{/projects}}
     </tbody>

@@ -1,8 +1,14 @@
         {{#projects}}
         <tr id="{{_id}}" class="{{css_class}}">
-            <td>{{client}}</td>
-            <td>{{title}}</td>
-            <td>{{due_date}}</td>
-            <td><a class="view" href="#/project/view/{{_id}}">View</a> | <a class="edit" href="#">Edit</a></td>
+            <td class="client">{{client}}</td>
+            <td class="project">{{title}}</td>
+            {{#progress}}
+            <td class="progress">
+                {{string}}
+                <div class="progressbar"></div>
+            </td>
+            {{/progress}}
+            <td class="due">{{due_date}}</td>
+            <td class="actions"><a class="view" href="#/project/view/{{_id}}">View</a> | <a class="edit" href="#">Edit</a></td>
         </tr>
         {{/projects}}

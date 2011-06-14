@@ -11,21 +11,27 @@ function(e, r) {
     // TODO find and store the user who created this (see vendor/couchapp/evently/profile/loggedIn.js)
     
     if (status == "active") {
-        doc.tasks.active.push(task);
-
         // Resetting dates
         if (task.completed_on) delete task.completed_on;
         if (task.set_pending_on) delete task.set_pending_on;
+
+        doc.tasks.active.push(task);
     } else if (status == "pending") {
-        doc.tasks.pending.push(task);
         task.set_pending_on = new Date();
-
         if (task.completed_on) delete task.completed_on;
-    } else if (status == "complete") {
-        doc.tasks.complete.push(task);
-        task.completed_on = new Date();
 
+        doc.tasks.pending.push(task);
+    } else if (status == "complete") {
+        task.completed_on = new Date();
         if (task.set_pending_on) delete task.set_pending_on;
+
+        doc.tasks.complete.push(task);
+    }
+    
+    // Figure out how much we have progressed on this project
+    doc.progress = {
+        string : doc.tasks.complete.length + " of " + (doc.tasks.active.length + doc.tasks.pending.length + doc.tasks.complete.length),
+        percent : parseInt((doc.tasks.complete.length / (doc.tasks.active.length + doc.tasks.pending.length + doc.tasks.complete.length)) * 100)
     }
     
     db.saveDoc(doc, {
