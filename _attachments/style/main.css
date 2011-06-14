@@ -1,5 +1,10 @@
 #account { float: right; }
 
+.ui-icon {
+    display: inline-block !important;
+    cursor: move;
+}
+
 section form label,
 section form input {
     display: block;
@@ -11,12 +16,12 @@ section form input[type="text"] {
 
 tr.overdue { background: red; }
 
+/* General Projects Table theming */
+
 #projects table {
     border-collapse: collapse;
     width: 100%;
 }
-
-/* General Projects Table theming */
 
 #projects table thead tr td { background: #333; color: white; padding: 1em; }
 #projects table tbody tr td { padding: 0.5em; border-top: 0.3em solid white; }

@@ -24,9 +24,6 @@
 <h3>Progress</h3>
 {{#progress}}
 <div id="progressbar" class="progressbar"></div>
-<script>
-    $("#progressbar").progressbar({ value: {{percent}} });
-</script>
 {{/progress}}
 
 <div id="tasks">
@@ -65,11 +62,11 @@
         </thead>
     </table>
     {{#has_active_tasks}}
-    <table>
+    <table class="active">
         <tbody>
         {{#active}}
             <tr class="active">
-                <td class="title">{{title}}</td>
+                <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status">Active</td>
                 <td class="actions">Edit | Remove</td>
@@ -79,11 +76,11 @@
     </table>
     {{/has_active_tasks}}
     {{#has_pending_tasks}}
-    <table>
+    <table class="pending">
         <tbody>
         {{#pending}}
             <tr class="pending">
-                <td class="title">{{title}}</td>
+                <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status">Pending<span class="date">as of {{#format_date}}{{set_pending_on}}{{/format_date}}</span></td>
                 <td class="actions">Edit | Remove</td>
@@ -93,11 +90,11 @@
     </table>
     {{/has_pending_tasks}}
     {{#has_complete_tasks}}
-    <table>
+    <table class="complete">
         <tbody>
             {{#complete}}
             <tr class="complete">
-                <td class="title">{{title}}</td>
+                <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status">Complete<span class="date">as of {{#format_date}}{{completed_on}}{{/format_date}}</span></td>
                 <td class="actions">Edit | Remove</td>

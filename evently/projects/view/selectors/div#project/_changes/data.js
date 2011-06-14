@@ -1,7 +1,6 @@
 function(data) {
   // $.log(data)
   var project = {};
-  var tasks = [];
   var db = $$(this).app.db;
 
   data.rows.map(function(r){
@@ -11,8 +10,6 @@ function(data) {
               for (i in project._attachments)
                   project.proposal = ['', db.name, project._id, i].join('/');
           }
-      } else if(r.value.type == 'task') {
-          tasks.push(r.value);
       }
   });
 
@@ -35,6 +32,5 @@ function(data) {
         return this.complete.length !== 0;
     },
     project : project,
-    tasks : tasks
   };
 };
