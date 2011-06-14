@@ -4,7 +4,7 @@ function(e, r) {
     var doc = $$('html').project;
     var task = $(form).serializeObject();
     
-    task.created_at = new Date();
+    task.created_on = new Date();
     var status = task.status;
     delete task.status; // We don't need to store this
     

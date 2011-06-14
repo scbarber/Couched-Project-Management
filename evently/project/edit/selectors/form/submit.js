@@ -30,8 +30,8 @@ function() {
     }
     
     // Set some meta dates:
-    if (!doc.created_at) {
-        doc.created_at = new Date();
+    if (!doc.created_on) {
+        doc.created_on = new Date();
     }
 
     if (doc.status == "Active" && !doc.started_on) {

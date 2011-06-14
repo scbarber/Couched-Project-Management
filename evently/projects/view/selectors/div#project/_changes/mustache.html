@@ -3,7 +3,7 @@
 <a class="edit" href="#/project/view/{{_id}}">Edit</a>
 <table class="dates">
     <tbody>
-        <tr><td>Created</td><td>{{#format_date}}{{created_at}}{{/format_date}}</td></tr>
+        <tr><td>Created</td><td>{{#format_date}}{{created_on}}{{/format_date}}</td></tr>
         {{#started_on}}<tr><td>Started</td><td>{{#format_date}}{{started_on}}{{/format_date}}</td></tr>{{/started_on}}
         <tr><td>Due</td><td>{{#format_date}}{{due_date}}{{/format_date}}</td></tr>
         {{#completed_on}}<tr><td>Completed</td><td>{{#format_date}}{{completed_on}}{{/format_date}}</td></tr>{{/completed_on}}
