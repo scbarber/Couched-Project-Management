@@ -44,3 +44,23 @@ tr.overdue { background: red; }
     width: 30px;
     text-align: right;
 }
+
+#projects div#project div#tasks div#add-new-task { display: none; }
+
+#projects div#project div#tasks table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#projects div#project div#tasks table thead tr td { background: #333; color: white; padding: 1em; }
+
+#projects div#project div#tasks table tbody tr td { padding: 0.5em; border-top: 0.3em solid white; }
+
+#projects div#project div#tasks table tr.active { background: #ddd; }
+#projects div#project div#tasks table tr.pending { background: #F2E1D9; }
+#projects div#project div#tasks table tr.complete { background: #F1F2D9; }
+
+#projects div#project div#tasks table td.title { width: 25%; }
+#projects div#project div#tasks table td.desc { width: 50%; }
+#projects div#project div#tasks table td.status { width: 10%; }
+#projects div#project div#tasks table td.actions { width: 15%; }

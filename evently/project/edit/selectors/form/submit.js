@@ -15,6 +15,15 @@ function() {
     }
 
     doc.type = "project";
+
+    // Setup the tasks property/object
+    if (!doc.tasks) {
+        doc.tasks = {
+            active: [],
+            pending: [],
+            complete: []
+        }
+    }
     
     // Set some meta dates:
     if (!doc.created_at) {
