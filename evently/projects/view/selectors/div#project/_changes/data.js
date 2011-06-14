@@ -25,6 +25,15 @@ function(data) {
             return Date.parseExact(render(text).replace(/\.\d+Z$/, 'Z'), ["yyyy-MM-ddTHH:mm:ssZ", "yyyy-MM-dd"]).toString("MMM d, yyyy");
         }
     },
+    has_active_tasks : function() {
+        return this.active.length !== 0;
+    },
+    has_pending_tasks : function() {
+        return this.pending.length !== 0;
+    },
+    has_complete_tasks : function() {
+        return this.complete.length !== 0;
+    },
     project : project,
     tasks : tasks
   };

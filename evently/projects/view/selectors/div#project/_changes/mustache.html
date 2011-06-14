@@ -55,6 +55,9 @@
                 <td class="actions">Actions</td>
             </tr>
         </thead>
+    </table>
+    {{#has_active_tasks}}
+    <table>
         <tbody>
         {{#active}}
             <tr class="active">
@@ -62,23 +65,39 @@
                 <td class="desc">{{description}}</td>
                 <td class="status">Active</td>
                 <td class="actions">Edit | Remove</td>
+            </tr>
         {{/active}}
+        </tbody>
+    </table>
+    {{/has_active_tasks}}
+    {{#has_pending_tasks}}
+    <table>
+        <tbody>
         {{#pending}}
             <tr class="pending">
                 <td class="title">{{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status">Pending<span class="date">as of {{#format_date}}{{set_pending_on}}{{/format_date}}</span></td>
                 <td class="actions">Edit | Remove</td>
+            </tr>
         {{/pending}}
-        {{#complete}}
+        </tbody>
+    </table>
+    {{/has_pending_tasks}}
+    {{#has_complete_tasks}}
+    <table>
+        <tbody>
+            {{#complete}}
             <tr class="complete">
                 <td class="title">{{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status">Complete<span class="date">as of {{#format_date}}{{completed_on}}{{/format_date}}</span></td>
                 <td class="actions">Edit | Remove</td>
-        {{/complete}}
+            </tr>
+            {{/complete}}
         </tbody>
     </table>
+    {{/has_complete_tasks}}
     {{/tasks}}
     
 </div>
