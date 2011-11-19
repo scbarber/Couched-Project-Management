@@ -86,10 +86,12 @@ tr.overdue { background: red; }
 #projects div#project div#tasks table td.title { width: 25%; }
 #projects div#project div#tasks table td.desc { width: 50%; }
 #projects div#project div#tasks table td.status { width: 10%; }
-#projects div#project div#tasks table td.actions { width: 15%; }
+#projects div#project div#tasks table td.actions { width: 15%; text-align: right; }
 
 #projects div#project div#tasks table tbody td.actions { font-size: 0.7em; }
 #projects div#project div#tasks table tbody td.status { cursor: pointer; }
+
+#projects div#project div#tasks table tbody td input { width: 100%; }
 
 #projects div#project div#tasks table td.status span.date {
     font-size: 0.7em;

@@ -23,6 +23,7 @@
 
 <h3>Progress</h3>
 {{#progress}}
+<p>{{string}}</p>
 <div id="progressbar" class="progressbar"></div>
 {{/progress}}
 
@@ -69,7 +70,7 @@
                 <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status"><span>Active</span></td>
-                <td class="actions">Edit | Remove</td>
+                <td class="actions"><a class="remove-task" href="#">Remove</a></td>
             </tr>
         {{/active}}
         </tbody>
@@ -83,7 +84,7 @@
                 <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status"><span>Pending</span><span class="date">as of {{#format_date}}{{set_pending_on}}{{/format_date}}</span></td>
-                <td class="actions">Edit | Remove</td>
+                <td class="actions"><a class="remove-task" href="#">Remove</a></td>
             </tr>
         {{/pending}}
         </tbody>
@@ -97,7 +98,7 @@
                 <td class="title"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span> {{title}}</td>
                 <td class="desc">{{description}}</td>
                 <td class="status"><span>Complete</span><span class="date">as of {{#format_date}}{{completed_on}}{{/format_date}}</span></td>
-                <td class="actions">Edit | Remove</td>
+                <td class="actions"><a class="remove-task" href="#">Remove</a></td>
             </tr>
             {{/complete}}
         </tbody>

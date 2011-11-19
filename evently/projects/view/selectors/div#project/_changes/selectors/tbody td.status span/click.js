@@ -28,8 +28,6 @@ function() {
             if (task.set_pending_on) delete task.set_pending_on;
         }
         
-        $.log(task);
-        
         project.tasks[newStatus].push(task);
         db.saveDoc(project);
     });
