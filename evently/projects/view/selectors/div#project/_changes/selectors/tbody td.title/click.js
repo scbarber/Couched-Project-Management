@@ -14,8 +14,10 @@ function() {
     $(input).focus();
     
     var saveTask = function() {
-        task.title = $(this).val();
-        db.saveDoc(project);
+        $.log("item is blurred");
+        $.log(task);
+        var newStatus = $(this).val();
+        // db.saveDoc(project);
     };
     
     $(input).blur(saveTask);

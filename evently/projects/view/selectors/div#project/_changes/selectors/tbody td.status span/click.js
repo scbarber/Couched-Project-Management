@@ -29,6 +29,13 @@ function() {
         }
         
         project.tasks[newStatus].push(task);
+
+        // Figure out how much we have progressed on this project
+        project.progress = {
+            string : project.tasks.complete.length + " of " + (project.tasks.active.length + project.tasks.pending.length + project.tasks.complete.length),
+            percent : parseInt((project.tasks.complete.length / (project.tasks.active.length + project.tasks.pending.length + project.tasks.complete.length)) * 100)
+        }
+                
         db.saveDoc(project);
     });
 }
